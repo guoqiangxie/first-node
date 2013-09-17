@@ -9,6 +9,7 @@ var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
 var first = require('./xgq/first');
+var read = require('./xgq/read');
 
 var app = express();
 
@@ -35,6 +36,7 @@ app.get('/users', user.list);
 
 app.get('/xgq/sayHello', first.sayHello);
 app.get('/xgq/firstPage', first.firstPage);
+app.get('/xgq/read', read.read);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
